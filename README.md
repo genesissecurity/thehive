@@ -108,16 +108,7 @@ Via Nginx:
 https://thehive.yourdomain.com
 ```
 
-## ♻️ 9. Atualizar API Key futuramente
-
-```
-docker compose restart thehive
-```
-
-## 🛠️ 10. Troubleshooting
-
-### TheHive reiniciando
-→ `.env` inválido
+## 🛠️ 9. Troubleshooting
 
 ### Erro de index
 ```
@@ -126,6 +117,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 
