@@ -38,7 +38,7 @@ docker network create proxy
 ## 📂 3. Garantir a estrutura de volumes
 
 ```
-mkdir -p vol/cassandra vol/nginx vol/ssl vol/thehive
+mkdir -p .vol/cassandra .vol/nginx .vol/ssl .vol/thehive
 ```
 
 ## 🔐 4. Criar os certificados autoassinados (SSL)
@@ -46,19 +46,19 @@ mkdir -p vol/cassandra vol/nginx vol/ssl vol/thehive
 ### 4.1 Chave privada
 
 ```
-openssl genrsa -out vol/ssl/nginx-selfsigned.key 2048
+openssl genrsa -out .vol/ssl/nginx-selfsigned.key 2048
 ```
 
 ### 4.2 Certificado
 
 ```
-openssl req -new -x509   -key vol/ssl/nginx-selfsigned.key   -out vol/ssl/nginx-selfsigned.crt   -days 365
+openssl req -new -x509   -key .vol/ssl/nginx-selfsigned.key   -out .vol/ssl/nginx-selfsigned.crt   -days 365
 ```
 
 ## 🔑 5 Configurar `thehive.conf`
 
 ```
-cd vol/nginx
+cd .vol/nginx
 nano thehive.conf
 Altere > server_name thehive.yourdomain.com;
 ```
@@ -67,27 +67,27 @@ Altere > server_name thehive.yourdomain.com;
 
 ### THEHIVE
 ```
-chown -R 1000:1000 vol/thehive
-chmod -R 775 vol/thehive
+chown -R 1000:1000 .vol/thehive
+chmod -R 775 .vol/thehive
 ```
 
 ### CASSANDRA
 ```
-chown -R 999:999 vol/cassandra
-chmod -R 700 vol/cassandra
+chown -R 999:999 .vol/cassandra
+chmod -R 700 .vol/cassandra
 ```
 
 ### NGINX
 ```
-chown -R 33:33 vol/nginx
-chmod -R 755 vol/nginx
+chown -R 33:33 .vol/nginx
+chmod -R 755 .vol/nginx
 ```
 
 ### SSL
 ```
-chown -R 33:33 vol/ssl
-chmod 600 vol/ssl/*.key
-chmod 644 vol/ssl/*.crt
+chown -R 33:33 .vol/ssl
+chmod 600 .vol/ssl/*.key
+chmod 644 .vol/ssl/*.crt
 ```
 
 ## 🚀 7. Subir o ambiente
@@ -112,11 +112,12 @@ https://thehive.yourdomain.com
 
 ### Erro de index
 ```
-rm -rf vol/thehive/index
-chown -R 1000:1000 vol/thehive
-chmod -R 775 vol/thehive
+rm -rf .vol/thehive/index
+chown -R 1000:1000 .vol/thehive
+chmod -R 775 .vol/thehive
 docker compose restart thehive
 ```
+
 
 
 
