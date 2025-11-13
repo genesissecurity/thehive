@@ -38,7 +38,7 @@ docker network create proxy
 ## 📂 3. Garantir a estrutura de volumes
 
 ```
-mkdir -p vol/cassandra vol/elasticsearch vol/nginx vol/ssl vol/thehive
+mkdir -p vol/cassandra vol/nginx vol/ssl vol/thehive
 ```
 
 ## 🔐 4. Criar os certificados autoassinados (SSL)
@@ -117,6 +117,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 
