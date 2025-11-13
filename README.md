@@ -59,8 +59,8 @@ openssl req -new -x509   -key vol/ssl/nginx-selfsigned.key   -out vol/ssl/nginx-
 
 ```
 cd vol/nginx
-Edite os arquivos thehive.conf
-Ajuste server_name thehive.yourdomain.com;
+nano thehive.conf
+Altere > server_name thehive.yourdomain.com;
 ```
 
 ## 🧾 6. Ajustar permissões
@@ -126,6 +126,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 
