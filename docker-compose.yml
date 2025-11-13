@@ -40,6 +40,8 @@ services:
       - ./vol/thehive/application.conf:/etc/thehive/application.conf
       - ./vol/thehive/data:/opt/thp/thehive/data
       - ./vol/thehive/index:/opt/thp/thehive/index
+      - ./vol/thehive/files:/opt/thp/thehive/files
+      - ./vol/thehive/logs:/opt/thp/thehive/logs
     networks:
       - proxy
       - backend
@@ -48,3 +50,4 @@ networks:
   backend:
   proxy:
     external: true
+
