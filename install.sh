@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-INSTALL_DIR="/home/william/thehive"
+INSTALL_DIR="/home/ubuntu/thehive"
 REPO_URL="https://github.com/genesissecurity/thehive"
 
 log(){ echo -e "\n🔹 $1"; }
