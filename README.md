@@ -1,5 +1,8 @@
 # TheHive + Cassandra + Nginx (HTTPS)
 
+### Documentação Oficial
+https://web.archive.org/web/20240707062957/https://docs.thehive-project.org/thehive/installation-and-configuration/installation/step-by-step-guide/
+
 Stack Docker com:
 
 - TheHive 4
